@@ -1,13 +1,13 @@
 # to print msg which function/operation starts performing
 def function_start_msg(fun_name):
     function_name_msg = f" {fun_name} Function "
-    print("\n" + function_name_msg.center(90, "*")+"\n")
+    print("\n" + function_name_msg.center(90, "*") + "\n")
 
 
 # to print msg function/operation ends
 def function_end_msg(fun_name):
     function_name_msg = f" {fun_name} Ends "
-    print("\n" + function_name_msg.center(90, "*")+"\n")
+    print("\n" + function_name_msg.center(90, "*") + "\n")
 
 
 # to verify user input data is valid or not default value set to none
@@ -16,7 +16,7 @@ def data_verification(Id=None, Name=None, RollNo=None, Contact=None):
     pattern = r"^SE-\d{4}-\d{3}$"
 
     if Id:
-        if not(Id.isnumeric()):
+        if not (Id.isnumeric()):
             raise Exception("Invalid Id entered")
     if Name:
         name = Name.replace(" ", "")
@@ -28,12 +28,12 @@ def data_verification(Id=None, Name=None, RollNo=None, Contact=None):
             raise Exception("Invalid Roll No format")
 
     if Contact:
-        if not(Contact.isnumeric()) or len(Contact) != 11:
+        if not (Contact.isnumeric()) or len(Contact) != 11:
             raise Exception("Invalid Number entered")
 
 
 # to display data of students
-def show_data():
+def view_record():
     function_start_msg("Fetching")
     # fetching all the records from the database
     get_query = "select Id, Name, RollNo, Contact from Students where IsDeleted = 0"
@@ -88,7 +88,7 @@ def search_record():
         # fetching particular data
         search_query = "Select Id, Name, RollNo, Contact from Students where {} like %s" \
                        " and IsDeleted = 0 ".format(key)
-    
+
         sql_cursor.execute(search_query, (value,))
         exist = sql_cursor.fetchone()
         if exist:
@@ -107,7 +107,7 @@ def search_record():
 
 
 # to insert data in database
-def insert_data():
+def insert_record():
     function_start_msg("Insertion")
     try:
         # getting following data from user
@@ -164,10 +164,10 @@ def insert_data():
 
 
 # to delete any particular data
-def delete_data():
+def delete_record():
     function_start_msg("Deletion")
     # to display all data
-    show_data()
+    view_record()
     # to fetch particular record and getting kry and value
     exist = search_record()
 
@@ -256,6 +256,7 @@ def update_record():
 if __name__ == "__main__":
     import mysql.connector
     import re
+
     # Creating SQL database connection
     mydb = mysql.connector.connect(host="localhost",
                                    user="root",
@@ -267,7 +268,7 @@ if __name__ == "__main__":
     function_start_msg("Welcome to Student Management System")
     while True:
         try:
-            choice = int(input("To view database: 1\n"
+            choice = int(input("To view record  : 1\n"
                                "To insert record: 2\n"
                                "To delete record: 3\n"
                                "To search record: 4\n"
@@ -283,13 +284,13 @@ if __name__ == "__main__":
             continue
 
         if choice == 1:
-            show_data()
+            view_record()
 
         elif choice == 2:
-            insert_data()
+            insert_record()
 
         elif choice == 3:
-            delete_data()
+            delete_record()
 
         elif choice == 4:
             search_record()
