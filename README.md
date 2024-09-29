@@ -2,16 +2,16 @@
 
 This project is a Student Management System built using Python and MySQL (for the database). It allows educational institutions to manage student records efficiently with options to add, update, delete, search, and view records. The project aims to solve internal school issues like managing admissions, student information, and teacher records.
 
-Features
+# Features
 
-	•	View Records: Displays all non-deleted student records from the database, showing ID, name, roll number, and contact details.
-	•	Insert Record: Adds a new student record after verifying that the roll number is unique and validating the input fields.
-	•	Delete Record: Soft deletes a record by marking it as deleted in the database without permanently removing it.
-	•	Search Record: Allows users to search for a student by ID, name, roll number, or contact details.
-	•	Update Record: Fetches a specific student record and allows the user to update any of the student’s details after verification.
-	•	Input Validation: Validates all user inputs for proper format and correct data types (e.g., numeric contact, roll number format like SE-2020-053).
+•	View Records: Displays all non-deleted student records from the database, showing ID, name, roll number, and contact details.
+•	Insert Record: Adds a new student record after verifying that the roll number is unique and validating the input fields.
+•	Delete Record: Soft deletes a record by marking it as deleted in the database without permanently removing it.
+•	Search Record: Allows users to search for a student by ID, name, roll number, or contact details.
+•	Update Record: Fetches a specific student record and allows the user to update any of the student’s details after verification.
+•	Input Validation: Validates all user inputs for proper format and correct data types (e.g., numeric contact, roll number format like SE-2020-053).
 
-Technologies Used
+# Technologies Used
 
 	•	Backend: Python
 	•	Database: MySQL
