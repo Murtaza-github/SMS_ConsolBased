@@ -5,6 +5,7 @@ This project is a Student Management System built using Python and MySQL (for th
 # Features
 
 •	View Records: Displays all non-deleted student records from the database, showing ID, name, roll number, and contact details.
+
 •	Insert Record: Adds a new student record after verifying that the roll number is unique and validating the input fields.
 •	Delete Record: Soft deletes a record by marking it as deleted in the database without permanently removing it.
 •	Search Record: Allows users to search for a student by ID, name, roll number, or contact details.
