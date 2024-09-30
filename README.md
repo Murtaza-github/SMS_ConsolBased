@@ -1,4 +1,5 @@
 # Student Management System
+##Overview
 This project is a Student Management System built using Python and MySQL (for the database). It allows educational institutions to manage student records efficiently with options to add, update, delete, search, and view records. The project aims to solve internal school issues like managing admissions, student information, and teacher records.
 
 ## Features
